@@ -1,0 +1,9 @@
+2021-07-22 00:15:39 [DEBUG] http-nio-8120-exec-2 Slf4jLogger.java:72 com.fjw.sms.client.CoreUserInfoClient [CoreUserInfoClient#checkMobile] <--- END ERROR
+2021-07-22 00:15:39 [ERROR] http-nio-8120-exec-2 CoreUserInfoClientFallback.java:18 com.fjw.sms.client.fallback.CoreUserInfoClientFallback 远程调用失败，服务熔断
+2021-07-22 00:15:39 [INFO ] http-nio-8120-exec-2 ApiSmsController.java:53 com.fjw.sms.controller.api.ApiSmsController result = false
+2021-07-22 00:35:28 [INFO ] main SpringApplication.java:655 com.fjw.sms.ServiceSmsApplication The following profiles are active: dev
+2021-07-22 00:35:39 [INFO ] main StartupInfoLogger.java:61 com.fjw.sms.ServiceSmsApplication Started ServiceSmsApplication in 15.629 seconds (JVM running for 17.827)
+2021-07-24 16:29:41 [INFO ] main SpringApplication.java:655 com.fjw.sms.ServiceSmsApplication The following profiles are active: dev
+2021-07-24 16:29:52 [INFO ] main StartupInfoLogger.java:61 com.fjw.sms.ServiceSmsApplication Started ServiceSmsApplication in 18.456 seconds (JVM running for 21.678)
+2021-08-02 23:39:24 [INFO ] main SpringApplication.java:655 com.fjw.sms.ServiceSmsApplication The following profiles are active: dev
+2021-08-03 00:03:54 [INFO ] main SpringApplication.java:655 com.fjw.sms.ServiceSmsApplication The following profiles are active: dev

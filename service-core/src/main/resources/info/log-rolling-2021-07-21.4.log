@@ -1,0 +1,6 @@
+2021-07-21 23:03:56 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 5.905 seconds (JVM running for 7.603)
+2021-07-21 23:05:42 [INFO ] main StartupInfoLogger.java:55 com.fjw.core.ServiceCoreApplication Starting ServiceCoreApplication on fjw with PID 15220 (F:\mycode\springProject\shangrongbao\service-core\target\classes started by 15679 in F:\mycode\springProject\shangrongbao)
+2021-07-21 23:05:42 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
+2021-07-21 23:05:47 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 5.584 seconds (JVM running for 7.376)
+2021-07-21 23:14:29 [INFO ] main StartupInfoLogger.java:55 com.fjw.core.ServiceCoreApplication Starting ServiceCoreApplication on fjw with PID 5612 (F:\mycode\springProject\shangrongbao\service-core\target\classes started by 15679 in F:\mycode\springProject\shangrongbao)
+2021-07-21 23:14:29 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev

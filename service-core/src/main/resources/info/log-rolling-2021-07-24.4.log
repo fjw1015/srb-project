@@ -1,0 +1,6 @@
+2021-07-24 17:45:51 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 14.554 seconds (JVM running for 16.807)
+2021-07-24 17:47:06 [INFO ] http-nio-8110-exec-5 RequestHelper.java:38 com.fjw.core.hfb.RequestHelper 加密前：999888|5|6258565656565656|招商银行|362330200000000000|15379698695|http://localhost/api/core/userBind/notify|方附件|http://localhost:3000/user|1627120026717|9876543210
+2021-07-24 17:47:06 [INFO ] http-nio-8110-exec-5 RequestHelper.java:40 com.fjw.core.hfb.RequestHelper 加密后：a4008495be893eeb80e5b7fb4ee3924e
+2021-07-24 17:47:13 [INFO ] http-nio-8110-exec-7 UserBindController.java:53 com.fjw.core.controller.api.UserBindController 用户账号绑定异步回调接收的参数如下：{"agentUserId":"5","resultCode":"0001","sign":"bb8047831400fb2025e14620252fdbc2","bindCode":"2b4ce58baad54365abdbbc4f23c9b50f","resultMsg":"成功","timestamp":"1627120032757"}
+2021-07-24 17:47:13 [INFO ] http-nio-8110-exec-7 RequestHelper.java:38 com.fjw.core.hfb.RequestHelper 加密前：5|2b4ce58baad54365abdbbc4f23c9b50f|0001|成功|1627120032757|9876543210
+2021-07-24 17:47:13 [INFO ] http-nio-8110-exec-7 RequestHelper.java:40 com.fjw.core.hfb.RequestHelper 加密后：bb8047831400fb2025e14620252fdbc2

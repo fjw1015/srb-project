@@ -1,0 +1,6 @@
+2021-07-24 16:30:23 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 17.658 seconds (JVM running for 20.917)
+2021-07-24 16:43:23 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
+2021-07-24 16:43:32 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 11.919 seconds (JVM running for 13.909)
+2021-07-24 16:45:09 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
+2021-07-24 16:45:18 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 11.441 seconds (JVM running for 13.524)
+2021-07-24 16:46:59 [INFO ] http-nio-8110-exec-1 RequestHelper.java:38 com.fjw.core.hfb.RequestHelper 加密前：999888|5|6215593700011926793|招商银行|362330200000000000|15379698695|http://localhost/api/core/userBind/notify|方俊文|http://localhost:3000/user|1627116419887|9876543210

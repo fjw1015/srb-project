@@ -1,0 +1,8 @@
+2021-07-21 23:34:50 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 5.812 seconds (JVM running for 7.725)
+2021-07-21 23:36:55 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
+2021-07-21 23:37:04 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 11.895 seconds (JVM running for 13.542)
+2021-07-21 23:47:00 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
+2021-07-21 23:47:08 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 11.035 seconds (JVM running for 13.001)
+2021-07-21 23:56:30 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
+2021-07-21 23:56:41 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 14.365 seconds (JVM running for 16.177)
+2021-07-22 00:24:12 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
