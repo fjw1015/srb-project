@@ -1,7 +1,0 @@
-2021-08-03 22:20:12 [INFO ] http-nio-8110-exec-9 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:20:12 [INFO ] http-nio-8110-exec-10 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:36:48 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
-2021-08-03 22:36:59 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 15.643 seconds (JVM running for 17.833)
-2021-08-03 22:42:39 [INFO ] http-nio-8110-exec-6 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
-2021-08-03 22:42:39 [INFO ] http-nio-8110-exec-5 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
-2021-08-03 22:42:39 [INFO ] http-nio-8110-exec-5 DictServiceImpl.java:85 com.fjw.core.service.impl.DictServiceImpl 将数据存入redis

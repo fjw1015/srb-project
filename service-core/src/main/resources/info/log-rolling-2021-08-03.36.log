@@ -1,8 +1,0 @@
-2021-08-03 22:10:03 [INFO ] http-nio-8110-exec-5 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:10:03 [INFO ] http-nio-8110-exec-2 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:12:36 [INFO ] http-nio-8110-exec-5 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:12:36 [INFO ] http-nio-8110-exec-10 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:13:15 [INFO ] http-nio-8110-exec-2 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:13:15 [INFO ] http-nio-8110-exec-8 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:13:56 [INFO ] http-nio-8110-exec-3 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表
-2021-08-03 22:13:56 [INFO ] http-nio-8110-exec-4 DictServiceImpl.java:66 com.fjw.core.service.impl.DictServiceImpl 从redis获取数据列表

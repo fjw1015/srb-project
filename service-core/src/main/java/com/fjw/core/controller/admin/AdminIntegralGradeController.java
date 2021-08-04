@@ -49,9 +49,6 @@ public class AdminIntegralGradeController {
     @ApiOperation("新增积分等级")
     @PostMapping("/save")
     public R save(@ApiParam(value = "积分等级对象", required = true) @RequestBody IntegralGrade integralGrade) {
-        /*if (integralGrade.getBorrowAmount() == null) {
-            throw new BusinessException(ResponseEnum.BORROW_AMOUNT_NULL_ERROR);
-        }*/
         Assert.notNull(integralGrade.getBorrowAmount(), ResponseEnum.BORROW_AMOUNT_NULL_ERROR);
         boolean result = integralGradeService.save(integralGrade);
         if (result) {

@@ -1,3 +1,5 @@
 2021-08-03 00:04:01 [INFO ] main StartupInfoLogger.java:61 com.fjw.sms.ServiceSmsApplication Started ServiceSmsApplication in 9.325 seconds (JVM running for 11.727)
 2021-08-03 10:36:26 [INFO ] main SpringApplication.java:655 com.fjw.sms.ServiceSmsApplication The following profiles are active: dev
 2021-08-03 10:36:33 [INFO ] main StartupInfoLogger.java:61 com.fjw.sms.ServiceSmsApplication Started ServiceSmsApplication in 12.112 seconds (JVM running for 15.2)
+2021-08-04 23:06:30 [INFO ] main SpringApplication.java:655 com.fjw.sms.ServiceSmsApplication The following profiles are active: dev
+2021-08-04 23:06:40 [INFO ] main StartupInfoLogger.java:61 com.fjw.sms.ServiceSmsApplication Started ServiceSmsApplication in 17.122 seconds (JVM running for 19.981)

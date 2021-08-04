@@ -1,9 +1,0 @@
-2021-08-03 22:00:10 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 13.82 seconds (JVM running for 15.71)
-2021-08-03 22:03:41 [INFO ] http-nio-8110-exec-7 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
-2021-08-03 22:03:41 [INFO ] http-nio-8110-exec-3 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
-2021-08-03 22:03:41 [INFO ] http-nio-8110-exec-4 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
-2021-08-03 22:03:41 [INFO ] http-nio-8110-exec-9 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
-2021-08-03 22:03:41 [INFO ] http-nio-8110-exec-3 DictServiceImpl.java:85 com.fjw.core.service.impl.DictServiceImpl 将数据存入redis
-2021-08-03 22:03:41 [INFO ] http-nio-8110-exec-7 DictServiceImpl.java:85 com.fjw.core.service.impl.DictServiceImpl 将数据存入redis
-2021-08-03 22:03:41 [INFO ] http-nio-8110-exec-4 DictServiceImpl.java:85 com.fjw.core.service.impl.DictServiceImpl 将数据存入redis
-2021-08-03 22:03:41 [INFO ] http-nio-8110-exec-9 DictServiceImpl.java:85 com.fjw.core.service.impl.DictServiceImpl 将数据存入redis

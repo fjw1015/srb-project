@@ -3,3 +3,5 @@
 2021-08-03 00:26:01 [INFO ] main StartupInfoLogger.java:61 com.fjw.gateway.ServiceGatewayApplication Started ServiceGatewayApplication in 16.329 seconds (JVM running for 18.918)
 2021-08-03 10:36:41 [INFO ] main SpringApplication.java:655 com.fjw.gateway.ServiceGatewayApplication The following profiles are active: dev
 2021-08-03 10:36:52 [INFO ] main StartupInfoLogger.java:61 com.fjw.gateway.ServiceGatewayApplication Started ServiceGatewayApplication in 16.218 seconds (JVM running for 18.561)
+2021-08-04 23:06:10 [INFO ] main SpringApplication.java:655 com.fjw.gateway.ServiceGatewayApplication The following profiles are active: dev
+2021-08-04 23:06:30 [INFO ] main StartupInfoLogger.java:61 com.fjw.gateway.ServiceGatewayApplication Started ServiceGatewayApplication in 22.857 seconds (JVM running for 25.301)
