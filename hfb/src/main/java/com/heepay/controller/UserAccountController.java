@@ -76,7 +76,7 @@ public class UserAccountController {
 		resultMap.put("chargeAmt", new BigDecimal((String)paramMap.get("chargeAmt")));
 		resultMap.put("mchFee",new BigDecimal("0"));
 		resultMap.put("hyFee",new BigDecimal("0"));
-		resultMap.put("timestamp",new Date().getTime());
+		resultMap.put("timestamp",System.currentTimeMillis());
 		resultMap.put("sign",SignUtil.getSign(resultMap));
 
 		//异步通知
@@ -119,7 +119,7 @@ public class UserAccountController {
 		resultMap.put("bindCode",paramMap.get("bindCode"));
 		resultMap.put("fetchAmt", new BigDecimal((String)paramMap.get("fetchAmt")));
 		resultMap.put("mchFee",new BigDecimal("0"));
-		resultMap.put("timestamp",new Date().getTime());
+		resultMap.put("timestamp",System.currentTimeMillis());
 		resultMap.put("sign",SignUtil.getSign(resultMap));
 
 		//异步通知
