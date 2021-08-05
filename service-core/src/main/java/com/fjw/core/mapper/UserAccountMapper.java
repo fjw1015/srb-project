@@ -15,7 +15,6 @@ import java.math.BigDecimal;
  * @since 2021-07-10
  */
 public interface UserAccountMapper extends BaseMapper<UserAccount> {
-
     void updateAccount(
             @Param("bindCode") String bindCode,
             @Param("amount") BigDecimal amount,

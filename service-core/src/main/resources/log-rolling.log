@@ -1,1 +1,5 @@
-2021-08-05 01:16:16 [INFO ] http-nio-8110-exec-3 RequestHelper.java:41 com.fjw.core.hfb.RequestHelper 加密后：c993a4c4b70f2f5c32af228ab16aefb9
+2021-08-06 01:14:36 [INFO ] http-nio-8110-exec-1 RequestHelper.java:41 com.fjw.core.hfb.RequestHelper 加密后：aaae8d2aee69942960de24d872f79f74
+2021-08-06 01:14:44 [INFO ] http-nio-8110-exec-2 UserAccountController.java:57 com.fjw.core.controller.api.UserAccountController 用户充值异步回调：{"chargeAmt":"100","hyFee":"0","mchFee":"0","resultCode":"0001","sign":"bf9fe1efa32cf7ac724c6ee66cca9583","bindCode":"2b4ce58baad54365abdbbc4f23c9b50f","agentBillNo":"20210806011436270","resultMsg":"充值成功","timestamp":"1628183683790"}
+2021-08-06 01:14:44 [INFO ] http-nio-8110-exec-2 RequestHelper.java:39 com.fjw.core.hfb.RequestHelper 加密前：20210806011436270|2b4ce58baad54365abdbbc4f23c9b50f|100|0|0|0001|充值成功|1628183683790|9876543210
+2021-08-06 01:14:44 [INFO ] http-nio-8110-exec-2 RequestHelper.java:41 com.fjw.core.hfb.RequestHelper 加密后：bf9fe1efa32cf7ac724c6ee66cca9583
+2021-08-06 01:14:44 [INFO ] http-nio-8110-exec-2 UserAccountServiceImpl.java:67 com.fjw.core.service.impl.UserAccountServiceImpl 充值成功：{"chargeAmt":"100","hyFee":"0","mchFee":"0","resultCode":"0001","bindCode":"2b4ce58baad54365abdbbc4f23c9b50f","agentBillNo":"20210806011436270","resultMsg":"充值成功","timestamp":"1628183683790"}

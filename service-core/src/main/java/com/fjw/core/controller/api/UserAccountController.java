@@ -55,13 +55,15 @@ public class UserAccountController {
     public String notify(HttpServletRequest request) {
         Map<String, Object> paramMap = RequestHelper.switchMap(request.getParameterMap());
         log.info("用户充值异步回调：" + JSON.toJSONString(paramMap));
-
         //校验签名
         if(RequestHelper.isSignEquals(paramMap)) {
+            //判断业务是否成功
             //充值成功交易
             if("0001".equals(paramMap.get("resultCode"))) {
+                //同步账户数据
                 return userAccountService.notify(paramMap);
             } else {
+                //同步
                 log.info("用户充值异步回调充值失败：" + JSON.toJSONString(paramMap));
                 return "success";
             }

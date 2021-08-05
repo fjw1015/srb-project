@@ -1,7 +1,8 @@
 package com.fjw.core.service;
 
-import com.fjw.core.pojo.entity.TransFlow;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fjw.core.pojo.bo.TransFlowBO;
+import com.fjw.core.pojo.entity.TransFlow;
 
 /**
  * <p>
@@ -12,5 +13,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2021-07-10
  */
 public interface TransFlowService extends IService<TransFlow> {
+    void saveTransFlow(TransFlowBO transFlowBO);
 
+    boolean isSaveTransFlow(String agentBillNo);
 }
