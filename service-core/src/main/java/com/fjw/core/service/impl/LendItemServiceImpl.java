@@ -162,10 +162,13 @@ public class LendItemServiceImpl extends ServiceImpl<LendItemMapper, LendItem> i
             return;
         }
         //获取用户的绑定协议号
-        String bindCode = (String) paramMap.get("voteBindCode");
+        String voteBindCode = (String) paramMap.get("voteBindCode");
         String voteAmt = (String) paramMap.get("voteAmt");
         //修改商户系统中的用户账户金额：余额、冻结金额
-        userAccountMapper.updateAccount(bindCode, new BigDecimal("-" + voteAmt), new BigDecimal(voteAmt));
+        userAccountMapper.updateAccount(
+                voteBindCode,
+                new BigDecimal("-" + voteAmt),
+                new BigDecimal(voteAmt));
         //修改投资记录的投资状态改为已支付
         LendItem lendItem = this.getByLendItemNo(agentBillNo);
         //已支付
@@ -180,7 +183,7 @@ public class LendItemServiceImpl extends ServiceImpl<LendItemMapper, LendItem> i
         //新增交易流水
         TransFlowBO transFlowBO = new TransFlowBO(
                 agentBillNo,
-                bindCode,
+                voteBindCode,
                 new BigDecimal(voteAmt),
                 TransTypeEnum.INVEST_LOCK,
                 "投资项目编号：" + lend.getLendNo() + "，项目名称：" + lend.getTitle());
