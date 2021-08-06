@@ -187,6 +187,12 @@ public class LendItemServiceImpl extends ServiceImpl<LendItemMapper, LendItem> i
         transFlowService.saveTransFlow(transFlowBO);
     }
 
+    /**
+     * 根据流水号获取投资记录
+     *
+     * @param lendItemNo
+     * @return
+     */
     private LendItem getByLendItemNo(String lendItemNo) {
         QueryWrapper<LendItem> queryWrapper = new QueryWrapper();
         queryWrapper.eq("lend_item_no", lendItemNo);
