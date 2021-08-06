@@ -2,6 +2,9 @@ package com.fjw.core.service;
 
 import com.fjw.core.pojo.entity.LendItem;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fjw.core.pojo.vo.InvestVO;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface LendItemService extends IService<LendItem> {
 
+    String commitInvest(InvestVO investVO);
+
+    void notify(Map<String, Object> paramMap);
 }

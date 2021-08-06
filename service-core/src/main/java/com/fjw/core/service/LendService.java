@@ -5,6 +5,7 @@ import com.fjw.core.pojo.entity.BorrowInfo;
 import com.fjw.core.pojo.entity.Lend;
 import com.fjw.core.pojo.vo.BorrowInfoApprovalVO;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -23,4 +24,6 @@ public interface LendService extends IService<Lend> {
     List<Lend> selectList();
 
     Map<String, Object> getLendDetail(Long id);
+
+    BigDecimal getInterestCount(BigDecimal invest, BigDecimal yearRate, Integer totalmonth, Integer returnMethod);
 }

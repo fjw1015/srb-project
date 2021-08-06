@@ -1,6 +1,7 @@
 package com.fjw.core.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fjw.common.exception.Assert;
 import com.fjw.common.result.ResponseEnum;
@@ -90,5 +91,14 @@ public class UserAccountServiceImpl extends ServiceImpl<UserAccountMapper, UserA
         transFlowService.saveTransFlow(transFlowBO);
 
         return "success";
+    }
+
+    @Override
+    public BigDecimal getAccount(Long userId) {
+        //根据userId查找用户账户
+        QueryWrapper<UserAccount> userAccountQueryWrapper = new QueryWrapper<>();
+        userAccountQueryWrapper.eq("user_id", userId);
+        UserAccount userAccount = baseMapper.selectOne(userAccountQueryWrapper);
+        return userAccount.getAmount();
     }
 }
