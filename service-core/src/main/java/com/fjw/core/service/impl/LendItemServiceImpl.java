@@ -26,6 +26,7 @@ import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -146,8 +147,7 @@ public class LendItemServiceImpl extends ServiceImpl<LendItemMapper, LendItem> i
         String sign = RequestHelper.getSign(paramMap);
         paramMap.put("sign", sign);
         //构建充值自动提交表单
-        String formStr = FormHelper.buildForm(HfbConst.INVEST_URL, paramMap);
-        return formStr;
+        return FormHelper.buildForm(HfbConst.INVEST_URL, paramMap);
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -188,6 +188,14 @@ public class LendItemServiceImpl extends ServiceImpl<LendItemMapper, LendItem> i
                 TransTypeEnum.INVEST_LOCK,
                 "投资项目编号：" + lend.getLendNo() + "，项目名称：" + lend.getTitle());
         transFlowService.saveTransFlow(transFlowBO);
+    }
+
+    @Override
+    public List<LendItem> selectByLendId(Long lendId, Integer status) {
+        QueryWrapper<LendItem> queryWrapper = new QueryWrapper();
+        queryWrapper.eq("lend_id", lendId)
+                .eq("status", status);
+        return baseMapper.selectList(queryWrapper);
     }
 
     /**

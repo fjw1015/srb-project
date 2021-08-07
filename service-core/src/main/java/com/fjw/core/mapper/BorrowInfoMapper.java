@@ -1,7 +1,7 @@
 package com.fjw.core.mapper;
 
-import com.fjw.core.pojo.entity.BorrowInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.fjw.core.pojo.entity.BorrowInfo;
 
 import java.util.List;
 

@@ -2,8 +2,8 @@ package com.fjw.core.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.fjw.core.pojo.entity.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fjw.core.pojo.entity.UserInfo;
 import com.fjw.core.pojo.query.UserInfoQuery;
 import com.fjw.core.pojo.vo.LoginVO;
 import com.fjw.core.pojo.vo.RegisterVo;

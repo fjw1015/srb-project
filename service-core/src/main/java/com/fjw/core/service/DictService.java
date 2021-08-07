@@ -1,7 +1,7 @@
 package com.fjw.core.service;
 
-import com.fjw.core.pojo.entity.Dict;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fjw.core.pojo.entity.Dict;
 
 import java.io.InputStream;
 import java.util.List;

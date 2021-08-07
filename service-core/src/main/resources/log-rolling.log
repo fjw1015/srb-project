@@ -1,5 +1,6 @@
-2021-08-07 00:00:52 [INFO ] http-nio-8110-exec-8 UserAccountServiceImpl.java:68 com.fjw.core.service.impl.UserAccountServiceImpl 充值成功：{"chargeAmt":"10000000","hyFee":"0","mchFee":"0","resultCode":"0001","bindCode":"7deb4f4412764b4ba6270f1bd7dd72c4","agentBillNo":"20210807000046981","resultMsg":"充值成功","timestamp":"1628265651067"}
-2021-08-07 00:31:27 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
-2021-08-07 00:31:36 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 11.88 seconds (JVM running for 13.752)
-2021-08-07 00:34:40 [INFO ] http-nio-8110-exec-6 RequestHelper.java:39 com.fjw.core.hfb.RequestHelper 加密前：INVEST20210807003440671|999888|LEND20210805000105763|白领贷01|2b4ce58baad54365abdbbc4f23c9b50f||http://localhost/api/core/lendItem/notify|100000.00|http://localhost:3000/user|1628267680354|10000|7deb4f4412764b4ba6270f1bd7dd72c4|0|0|9876543210
-2021-08-07 00:34:40 [INFO ] http-nio-8110-exec-6 RequestHelper.java:41 com.fjw.core.hfb.RequestHelper 加密后：4058e1e81f7bbff7fdd9661da5a1140d
+2021-08-07 23:16:33 [INFO ] http-nio-8110-exec-5 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
+2021-08-07 23:16:33 [INFO ] http-nio-8110-exec-5 DictServiceImpl.java:85 com.fjw.core.service.impl.DictServiceImpl 将数据存入redis
+2021-08-07 23:16:35 [INFO ] http-nio-8110-exec-4 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
+2021-08-07 23:16:35 [INFO ] http-nio-8110-exec-4 DictServiceImpl.java:85 com.fjw.core.service.impl.DictServiceImpl 将数据存入redis
+2021-08-07 23:16:37 [INFO ] http-nio-8110-exec-3 DictServiceImpl.java:73 com.fjw.core.service.impl.DictServiceImpl 从数据库中获取数据列表
+2021-08-07 23:16:37 [INFO ] http-nio-8110-exec-3 DictServiceImpl.java:85 com.fjw.core.service.impl.DictServiceImpl 将数据存入redis

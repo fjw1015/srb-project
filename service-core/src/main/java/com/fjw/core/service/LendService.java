@@ -26,4 +26,11 @@ public interface LendService extends IService<Lend> {
     Map<String, Object> getLendDetail(Long id);
 
     BigDecimal getInterestCount(BigDecimal invest, BigDecimal yearRate, Integer totalmonth, Integer returnMethod);
+
+    /**
+     * 满标放款
+     *
+     * @param lendId
+     */
+    void makeLoan(Long lendId);
 }

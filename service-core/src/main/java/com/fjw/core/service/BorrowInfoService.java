@@ -1,7 +1,7 @@
 package com.fjw.core.service;
 
-import com.fjw.core.pojo.entity.BorrowInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fjw.core.pojo.entity.BorrowInfo;
 import com.fjw.core.pojo.vo.BorrowInfoApprovalVO;
 
 import java.math.BigDecimal;

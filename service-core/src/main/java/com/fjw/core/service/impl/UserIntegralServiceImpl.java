@@ -1,9 +1,9 @@
 package com.fjw.core.service.impl;
 
-import com.fjw.core.pojo.entity.UserIntegral;
-import com.fjw.core.mapper.UserIntegralMapper;
-import com.fjw.core.service.UserIntegralService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fjw.core.mapper.UserIntegralMapper;
+import com.fjw.core.pojo.entity.UserIntegral;
+import com.fjw.core.service.UserIntegralService;
 import org.springframework.stereotype.Service;
 
 /**

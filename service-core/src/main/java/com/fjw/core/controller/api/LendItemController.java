@@ -33,7 +33,7 @@ import java.util.Map;
 @Slf4j
 public class LendItemController {
     @Resource
-    LendItemService lendItemService;
+    private LendItemService lendItemService;
 
     @ApiOperation("会员投资提交数据")
     @PostMapping("/auth/commitInvest")

@@ -2,8 +2,8 @@ package com.fjw.core.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.fjw.core.pojo.entity.Borrower;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fjw.core.pojo.entity.Borrower;
 import com.fjw.core.pojo.vo.BorrowerApprovalVO;
 import com.fjw.core.pojo.vo.BorrowerDetailVO;
 import com.fjw.core.pojo.vo.BorrowerVO;

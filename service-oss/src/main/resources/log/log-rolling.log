@@ -3,3 +3,5 @@
 2021-08-06 00:47:26 [INFO ] main StartupInfoLogger.java:61 com.fjw.oss.ServiceOssApplication Started ServiceOssApplication in 18.704 seconds (JVM running for 20.897)
 2021-08-06 22:20:05 [INFO ] main SpringApplication.java:655 com.fjw.oss.ServiceOssApplication The following profiles are active: dev
 2021-08-06 22:20:13 [INFO ] main StartupInfoLogger.java:61 com.fjw.oss.ServiceOssApplication Started ServiceOssApplication in 11.757 seconds (JVM running for 14.128)
+2021-08-07 21:31:27 [INFO ] main SpringApplication.java:655 com.fjw.oss.ServiceOssApplication The following profiles are active: dev
+2021-08-07 21:31:36 [INFO ] main StartupInfoLogger.java:61 com.fjw.oss.ServiceOssApplication Started ServiceOssApplication in 13.42 seconds (JVM running for 16.379)

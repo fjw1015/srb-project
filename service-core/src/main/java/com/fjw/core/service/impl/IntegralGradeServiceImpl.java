@@ -1,9 +1,9 @@
 package com.fjw.core.service.impl;
 
-import com.fjw.core.pojo.entity.IntegralGrade;
-import com.fjw.core.mapper.IntegralGradeMapper;
-import com.fjw.core.service.IntegralGradeService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fjw.core.mapper.IntegralGradeMapper;
+import com.fjw.core.pojo.entity.IntegralGrade;
+import com.fjw.core.service.IntegralGradeService;
 import org.springframework.stereotype.Service;
 
 /**

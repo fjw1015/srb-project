@@ -1,7 +1,7 @@
 package com.fjw.core.service;
 
-import com.fjw.core.pojo.entity.BorrowerAttach;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fjw.core.pojo.entity.BorrowerAttach;
 import com.fjw.core.pojo.vo.BorrowerAttachVO;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.fjw.core.mapper;
 
-import com.fjw.core.pojo.entity.BorrowerAttach;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.fjw.core.pojo.entity.BorrowerAttach;
 
 /**
  * <p>

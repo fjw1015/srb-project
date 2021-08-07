@@ -1,7 +1,7 @@
 package com.fjw.core.service;
 
-import com.fjw.core.pojo.entity.UserBind;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fjw.core.pojo.entity.UserBind;
 import com.fjw.core.pojo.vo.UserBindVo;
 
 import java.util.Map;

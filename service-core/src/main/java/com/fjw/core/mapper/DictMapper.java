@@ -1,8 +1,8 @@
 package com.fjw.core.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.fjw.core.pojo.dto.ExcelDictDTO;
 import com.fjw.core.pojo.entity.Dict;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;
 
