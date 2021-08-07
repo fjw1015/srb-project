@@ -95,7 +95,6 @@ public class UserAccountController {
     public String notifyWithdraw(HttpServletRequest request) {
         Map<String, Object> paramMap = RequestHelper.switchMap(request.getParameterMap());
         log.info("提现异步回调：" + JSON.toJSONString(paramMap));
-
         //校验签名
         if (RequestHelper.isSignEquals(paramMap)) {
             //提现成功交易

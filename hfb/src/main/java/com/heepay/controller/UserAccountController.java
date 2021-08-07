@@ -114,7 +114,7 @@ public class UserAccountController {
 
 		Map<String, Object> resultMap = new HashMap<>();
 		resultMap.put("resultCode","0001");
-		resultMap.put("resultMsg","充值成功");
+		resultMap.put("resultMsg","业务成功");
 		resultMap.put("agentBillNo",paramMap.get("agentBillNo"));
 		resultMap.put("bindCode",paramMap.get("bindCode"));
 		resultMap.put("fetchAmt", new BigDecimal((String)paramMap.get("fetchAmt")));
