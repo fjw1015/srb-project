@@ -78,7 +78,6 @@ public class LendItemServiceImpl extends ServiceImpl<LendItemMapper, LendItem> i
         BigDecimal amount = userAccountService.getAccount(investUserId);
         Assert.isTrue(amount.doubleValue() >= Double.parseDouble(investVO.getInvestAmount()),
                 ResponseEnum.NOT_SUFFICIENT_FUNDS_ERROR);
-
         //在商户平台中生成投资信息
         //标的下的投资信息
         LendItem lendItem = new LendItem();
@@ -195,6 +194,13 @@ public class LendItemServiceImpl extends ServiceImpl<LendItemMapper, LendItem> i
         QueryWrapper<LendItem> queryWrapper = new QueryWrapper();
         queryWrapper.eq("lend_id", lendId)
                 .eq("status", status);
+        return baseMapper.selectList(queryWrapper);
+    }
+
+    @Override
+    public List<LendItem> selectByLendId(Long lendId) {
+        QueryWrapper<LendItem> queryWrapper = new QueryWrapper();
+        queryWrapper.eq("lend_id", lendId);
         return baseMapper.selectList(queryWrapper);
     }
 
