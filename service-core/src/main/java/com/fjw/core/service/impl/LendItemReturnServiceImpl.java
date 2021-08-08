@@ -54,7 +54,7 @@ public class LendItemReturnServiceImpl extends ServiceImpl<LendItemReturnMapper,
     }
 
     /**
-     * 添加还款明细
+     * 添加还款明细 通过还款计划的id 找到对应的回款计划数据 组装data参数中需要的List<Map>
      *
      * @param lendReturnId
      */
@@ -68,8 +68,12 @@ public class LendItemReturnServiceImpl extends ServiceImpl<LendItemReturnMapper,
         List<LendItemReturn> lendItemReturnList = this.selectLendItemReturnList(lendReturnId);
         List<Map<String, Object>> lendItemReturnDetailList = new ArrayList<>();
         for (LendItemReturn lendItemReturn : lendItemReturnList) {
-            LendItem lendItem = lendItemMapper.selectById(lendItemReturn.getLendItemId());
-            String bindCode = userBindService.getBindCodeByUserId(lendItem.getInvestUserId());
+            //获取投资记录
+            Long lendItemId = lendItemReturn.getLendItemId();
+            LendItem lendItem = lendItemMapper.selectById(lendItemId);
+            //获取投资人id
+            Long investUserId = lendItem.getInvestUserId();
+            String bindCode = userBindService.getBindCodeByUserId(investUserId);
             Map<String, Object> map = new HashMap<>();
             //项目编号
             map.put("agentProjectCode", lend.getLendNo());
@@ -90,11 +94,16 @@ public class LendItemReturnServiceImpl extends ServiceImpl<LendItemReturnMapper,
         return lendItemReturnDetailList;
     }
 
+    /**
+     * 根据还款记录id查询对应的回款记录
+     *
+     * @param lendReturnId
+     * @return
+     */
     @Override
     public List<LendItemReturn> selectLendItemReturnList(Long lendReturnId) {
         QueryWrapper<LendItemReturn> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("lend_return_id", lendReturnId);
-        List<LendItemReturn> lendItemReturnList = baseMapper.selectList(queryWrapper);
-        return lendItemReturnList;
+        return baseMapper.selectList(queryWrapper);
     }
 }

@@ -85,6 +85,7 @@ public class LendReturnServiceImpl extends ServiceImpl<LendReturnMapper, LendRet
         //获取lend
         Long lendId = lendReturn.getLendId();
         Lend lend = lendMapper.selectById(lendId);
+        //组装参数
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("agentId", HfbConst.AGENT_ID);
         //商户商品名称
@@ -95,6 +96,7 @@ public class LendReturnServiceImpl extends ServiceImpl<LendReturnMapper, LendRet
         paramMap.put("fromBindCode", bindCode);
         //还款总额
         paramMap.put("totalAmt", lendReturn.getTotal());
+        //非必填
         paramMap.put("note", "");
         //还款明细
         List<Map<String, Object>> lendItemReturnDetailList = lendItemReturnService.addReturnDetail(lendReturnId);
