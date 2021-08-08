@@ -8,6 +8,7 @@ import com.fjw.common.result.ResponseEnum;
 import com.fjw.common.utils.RegexValidateUtils;
 import com.fjw.core.pojo.vo.LoginVO;
 import com.fjw.core.pojo.vo.RegisterVo;
+import com.fjw.core.pojo.vo.UserIndexVO;
 import com.fjw.core.pojo.vo.UserInfoVO;
 import com.fjw.core.service.UserInfoService;
 import io.swagger.annotations.Api;
@@ -99,6 +100,14 @@ public class UserInfoController {
         return userInfoService.checkMobile(mobile);
     }
 
+    @ApiOperation("获取个人空间用户信息")
+    @GetMapping("/auth/getIndexUserInfo")
+    public R getIndexUserInfo(HttpServletRequest request) {
+        String token = request.getHeader("token");
+        Long userId = JwtUtils.getUserId(token);
+        UserIndexVO userIndexVO = userInfoService.getIndexUserInfo(userId);
+        return R.ok().data("userIndexVO", userIndexVO);
+    }
 
 }
 

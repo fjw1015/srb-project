@@ -11,6 +11,13 @@ spring:
   application:
     name: service-sms # 服务名
 
+  rabbitmq:
+    host: 192.168.189.128
+    port: 5672
+    virtual-host: /srbhost
+    username: srbuser
+    password: 123456
+
   #spring:
   redis:
     host: 127.0.0.1
