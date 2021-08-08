@@ -1,5 +1,6 @@
-2021-08-08 01:49:23 [INFO ] http-nio-8110-exec-4 RequestHelper.java:41 com.fjw.core.hfb.RequestHelper 加密后：d5073df8c22855c188e17621a6b59276
-2021-08-08 01:49:23 [INFO ] http-nio-8110-exec-4 UserAccountServiceImpl.java:75 com.fjw.core.service.impl.UserAccountServiceImpl 充值成功：{"chargeAmt":"10000","hyFee":"0","mchFee":"0","resultCode":"0001","bindCode":"7deb4f4412764b4ba6270f1bd7dd72c4","agentBillNo":"20210808014918813","resultMsg":"充值成功","timestamp":"1628358562552"}
-2021-08-08 14:58:49 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
-2021-08-08 15:13:01 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
-2021-08-08 15:13:44 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 48.239 seconds (JVM running for 50.816)
+2021-08-08 16:47:14 [INFO ] http-nio-8110-exec-2 RequestHelper.java:41 com.fjw.core.hfb.RequestHelper 加密后：a1b05af11d8584c65869f89219486088
+2021-08-08 16:47:14 [INFO ] http-nio-8110-exec-2 LendReturnServiceImpl.java:115 com.fjw.core.service.impl.LendReturnServiceImpl 还款成功
+2021-08-08 16:51:52 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
+2021-08-08 16:52:01 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 13.433 seconds (JVM running for 15.802)
+2021-08-08 16:57:06 [INFO ] main SpringApplication.java:655 com.fjw.core.ServiceCoreApplication The following profiles are active: dev
+2021-08-08 16:57:16 [INFO ] main StartupInfoLogger.java:61 com.fjw.core.ServiceCoreApplication Started ServiceCoreApplication in 12.989 seconds (JVM running for 14.961)

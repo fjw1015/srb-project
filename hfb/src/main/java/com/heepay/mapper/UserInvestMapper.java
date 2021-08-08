@@ -15,6 +15,7 @@ public interface UserInvestMapper extends BaseMapper<UserInvest> {
 
     /**
      * 根据项目编号获取投资总金额
+     *
      * @param agentProjectCode
      * @return
      */

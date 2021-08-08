@@ -20,9 +20,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- *
  * @author qy
- *
  */
 @CrossOrigin
 @Controller
@@ -30,52 +28,54 @@ import java.util.Map;
 @Slf4j
 public class LendReturnController {
 
-	@Resource
-	private LendReturnService borrowReturnService;
+    @Resource
+    private LendReturnService borrowReturnService;
 
-	@Resource
-	private UserBindService userBindService;
+    @Resource
+    private UserBindService userBindService;
 
-	@Resource
-	private UserAccountService userAccountService;
+    @Resource
+    private UserAccountService userAccountService;
 
-	/**
-	 * 还款
-	 * @param request
-	 * @return
-	 */
-	@PostMapping("/AgreeUserRepayment")
-	public String  AgreeUserVoteProject(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		Map<String, Object> paramMap = SignUtil.switchMap(request.getParameterMap());
-		SignUtil.isSignEquals(paramMap);
+    /**
+     * 还款
+     *
+     * @param request
+     * @return
+     */
+    @PostMapping("/AgreeUserRepayment")
+    public String AgreeUserVoteProject(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Map<String, Object> paramMap = SignUtil.switchMap(request.getParameterMap());
+        SignUtil.isSignEquals(paramMap);
 
-		model.addAttribute("paramMap", paramMap);
-		model.addAttribute("userBind", userBindService.getByBindCode((String)paramMap.get("fromBindCode")));
-		model.addAttribute("userAccount", userAccountService.getByUserCode((String)paramMap.get("fromBindCode")));
-		return "lendReturn/index";
-	}
+        model.addAttribute("paramMap", paramMap);
+        model.addAttribute("userBind", userBindService.getByBindCode((String) paramMap.get("fromBindCode")));
+        model.addAttribute("userAccount", userAccountService.getByUserCode((String) paramMap.get("fromBindCode")));
+        return "lendReturn/index";
+    }
 
-	/**
-	 * 还款
-	 * @param request
-	 * @return
-	 */
-	@PostMapping("/returnCommit")
-	public String returnCommit(Model model,HttpServletRequest request, HttpServletResponse response) throws IOException {
-		Map<String, Object> paramMap = SignUtil.switchMap(request.getParameterMap());
+    /**
+     * 还款
+     *
+     * @param request
+     * @return
+     */
+    @PostMapping("/returnCommit")
+    public String returnCommit(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Map<String, Object> paramMap = SignUtil.switchMap(request.getParameterMap());
 
-		userBindService.checkPassword((String)paramMap.get("fromBindCode"), request.getParameter("payPasswd"));
+        userBindService.checkPassword((String) paramMap.get("fromBindCode"), request.getParameter("payPasswd"));
 
-		Map<String, Object> resultParam = borrowReturnService.returnCommit(paramMap);
+        Map<String, Object> resultParam = borrowReturnService.returnCommit(paramMap);
 
-		//异步通知
-		//threadPoolExecutor.submit(new NotifyThread((String)paramMap.get("notifyUrl"), resultParam));
-		ScheduledTask.queue.offer(new NotifyVo((String)paramMap.get("notifyUrl"), resultParam));
+        //异步通知
+        //threadPoolExecutor.submit(new NotifyThread((String)paramMap.get("notifyUrl"), resultParam));
+        ScheduledTask.queue.offer(new NotifyVo((String) paramMap.get("notifyUrl"), resultParam));
 
-		//同步跳转
-		//response.sendRedirect(userBind.getReturnUrl());
-		model.addAttribute("returnUrl", paramMap.get("returnUrl"));
-		return "lendReturn/success";
-	}
+        //同步跳转
+        //response.sendRedirect(userBind.getReturnUrl());
+        model.addAttribute("returnUrl", paramMap.get("returnUrl"));
+        return "lendReturn/success";
+    }
 }
 

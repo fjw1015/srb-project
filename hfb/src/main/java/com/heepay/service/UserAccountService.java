@@ -13,6 +13,7 @@ public interface UserAccountService extends IService<UserAccount> {
 
     /**
      * 锁定账户
+     *
      * @param userCode
      * @param lockAmt
      * @return
@@ -21,6 +22,7 @@ public interface UserAccountService extends IService<UserAccount> {
 
     /**
      * 解锁账户
+     *
      * @param userCode
      * @param unLockAmt
      * @return
@@ -29,6 +31,7 @@ public interface UserAccountService extends IService<UserAccount> {
 
     /**
      * 转账
+     *
      * @param userCode
      * @param unLockAmt
      * @return
@@ -37,6 +40,7 @@ public interface UserAccountService extends IService<UserAccount> {
 
     /**
      * 查询账户余额
+     *
      * @param userCode
      * @return
      */

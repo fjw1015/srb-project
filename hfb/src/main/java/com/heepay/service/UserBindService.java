@@ -7,11 +7,11 @@ import java.util.Map;
 
 public interface UserBindService extends IService<UserBind> {
 
-	UserBind bind(Map<String, Object> paramMap);
+    UserBind bind(Map<String, Object> paramMap);
 
-	boolean isBind(String idCard);
+    boolean isBind(String idCard);
 
-	UserBind getByBindCode(String bindCode);
+    UserBind getByBindCode(String bindCode);
 
-	void checkPassword(String bindCode, String password);
+    void checkPassword(String bindCode, String password);
 }

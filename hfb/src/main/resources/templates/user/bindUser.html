@@ -44,7 +44,8 @@
                     <td>银行类型：民生银行</td>
                 </tr>
                 <tr>
-                    <td width="50%">预留手机：<span th:text="${paramMap.mobile}"></span>&nbsp;&nbsp;<a href="javascript:">获取验证码</a></td>
+                    <td width="50%">预留手机：<span th:text="${paramMap.mobile}"></span>&nbsp;&nbsp;<a href="javascript:">获取验证码</a>
+                    </td>
                     <td>校验手机：<input name="code" class="inputTxt"></td>
                 </tr>
             </table>
@@ -65,13 +66,13 @@
 
 <div class="footer">
     <p class="hui">地址：江西省吉安市青原区 电话：010-88888888</p>
-    <p class="hui">Copyright © 2020 北京风飘客科技有限公司 All Rights Reserved  京ICP备15000000号</p>
+    <p class="hui">Copyright © 2020 北京风飘客科技有限公司 All Rights Reserved 京ICP备15000000号</p>
 </div>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $("#submitForm").click(function(){
+    $(document).ready(function () {
+        $("#submitForm").click(function () {
             var payPasswd = $("#payPasswd").val();
-            if(payPasswd == '') {
+            if (payPasswd == '') {
                 alert("支付密码必须输入")
                 return
             }

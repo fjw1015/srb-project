@@ -13,7 +13,8 @@ public class NotifyThread implements Runnable {
     private String notifyUrl;
     private Map<String, Object> paramMap;
 
-    public NotifyThread(){}
+    public NotifyThread() {
+    }
 
     public NotifyThread(String notifyUrl, Map<String, Object> paramMap) {
         this.notifyUrl = notifyUrl;
@@ -27,11 +28,11 @@ public class NotifyThread implements Runnable {
 
     private void task() {
         //发起远程调用
-        String result = SignUtil.sendRequest(paramMap,notifyUrl);
+        String result = SignUtil.sendRequest(paramMap, notifyUrl);
 
 
         log.info(notifyUrl + "：" + result + " count：" + count);
-        if(!"success".equals(result)) {
+        if (!"success".equals(result)) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -39,7 +40,7 @@ public class NotifyThread implements Runnable {
             }
             //ScheduledTask.queue.offer(new NotifyVo(notifyUrl, paramMap));
             count++;
-            if(count <= 5) {
+            if (count <= 5) {
                 task();
                 log.info("失败重试：" + JSON.toJSONString(this));
             }

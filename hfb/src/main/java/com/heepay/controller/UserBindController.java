@@ -1,16 +1,16 @@
 package com.heepay.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.heepay.model.NotifyVo;
 import com.heepay.model.UserBind;
 import com.heepay.service.UserBindService;
 import com.heepay.task.ScheduledTask;
 import com.heepay.util.SignUtil;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +22,7 @@ import java.util.Map;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- *
  * @author qy
- *
  */
 @CrossOrigin
 @Controller
@@ -32,53 +30,54 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Slf4j
 public class UserBindController {
 
-	@Resource
-	private UserBindService userBindService;
+    @Resource
+    private UserBindService userBindService;
 
-	@Resource
-	private ThreadPoolExecutor threadPoolExecutor;
+    @Resource
+    private ThreadPoolExecutor threadPoolExecutor;
 
-	/**
-	 * 绑定用户
-	 * @param request
-	 * @return
-	 */
-	@PostMapping("/BindAgreeUserV2")
-	public String  bind(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		Map<String, Object> paramMap = SignUtil.switchMap(request.getParameterMap());
-		SignUtil.isSignEquals(paramMap);
+    /**
+     * 绑定用户
+     *
+     * @param request
+     * @return
+     */
+    @PostMapping("/BindAgreeUserV2")
+    public String bind(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Map<String, Object> paramMap = SignUtil.switchMap(request.getParameterMap());
+        SignUtil.isSignEquals(paramMap);
 
-		boolean isBind = userBindService.isBind((String)paramMap.get("idCard"));
-		if(isBind) {
-			model.addAttribute("returnUrl", paramMap.get("returnUrl"));
-			return "user/success";
-		}
+        boolean isBind = userBindService.isBind((String) paramMap.get("idCard"));
+        if (isBind) {
+            model.addAttribute("returnUrl", paramMap.get("returnUrl"));
+            return "user/success";
+        }
 
-		model.addAttribute("paramMap", paramMap);
-		return "user/bindUser";
-	}
+        model.addAttribute("paramMap", paramMap);
+        return "user/bindUser";
+    }
 
-	@PostMapping("/save")
-	public String save(Model model,HttpServletRequest request, HttpServletResponse response) throws IOException {
-		Map<String, Object> paramMap = SignUtil.switchMap(request.getParameterMap());
+    @PostMapping("/save")
+    public String save(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Map<String, Object> paramMap = SignUtil.switchMap(request.getParameterMap());
 
-		//账户绑定
-		UserBind userBind = userBindService.bind(paramMap);
+        //账户绑定
+        UserBind userBind = userBindService.bind(paramMap);
 
-		//异步通知
-		Map<String, Object> resultMap = new HashMap<>();
-		resultMap.put("resultCode","0001");
-		resultMap.put("resultMsg","成功");
-		resultMap.put("bindCode",userBind.getBindCode());
-		resultMap.put("agentUserId",userBind.getAgentUserId());
-		resultMap.put("timestamp",new Date().getTime());
-		resultMap.put("sign",SignUtil.getSign(resultMap));
-		ScheduledTask.queue.offer(new NotifyVo(userBind.getNotifyUrl(), resultMap));
+        //异步通知
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("resultCode", "0001");
+        resultMap.put("resultMsg", "成功");
+        resultMap.put("bindCode", userBind.getBindCode());
+        resultMap.put("agentUserId", userBind.getAgentUserId());
+        resultMap.put("timestamp", new Date().getTime());
+        resultMap.put("sign", SignUtil.getSign(resultMap));
+        ScheduledTask.queue.offer(new NotifyVo(userBind.getNotifyUrl(), resultMap));
 
-		//同步跳转
-		//response.sendRedirect(userBind.getReturnUrl());
-		model.addAttribute("returnUrl", paramMap.get("returnUrl"));
-		return "user/success";
-	}
+        //同步跳转
+        //response.sendRedirect(userBind.getReturnUrl());
+        model.addAttribute("returnUrl", paramMap.get("returnUrl"));
+        return "user/success";
+    }
 }
 

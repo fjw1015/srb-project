@@ -32,16 +32,16 @@ import java.util.Map;
 @Service
 public class LendItemReturnServiceImpl extends ServiceImpl<LendItemReturnMapper, LendItemReturn> implements LendItemReturnService {
     @Resource
-    private UserBindService userBindService;
+    private LendMapper lendMapper;
+
+    @Resource
+    private LendReturnMapper lendReturnMapper;
 
     @Resource
     private LendItemMapper lendItemMapper;
 
     @Resource
-    private LendMapper lendMapper;
-
-    @Resource
-    private LendReturnMapper lendReturnMapper;
+    private UserBindService userBindService;
 
     @Override
     public List<LendItemReturn> selectByLendId(Long lendId, Long userId) {
@@ -54,17 +54,17 @@ public class LendItemReturnServiceImpl extends ServiceImpl<LendItemReturnMapper,
     }
 
     /**
-     * 添加还款明细 通过还款计划的id 找到对应的回款计划数据 组装data参数中需要的List<Map>
+     * 通过还款计划的id，找到对应的回款计划数据，组装data参数中需要的List<Map>
      *
      * @param lendReturnId
+     * @return
      */
     @Override
     public List<Map<String, Object>> addReturnDetail(Long lendReturnId) {
-        //获取还款记录
+        //还款记录
         LendReturn lendReturn = lendReturnMapper.selectById(lendReturnId);
-        //获取标的信息
+        //获取标的
         Lend lend = lendMapper.selectById(lendReturn.getLendId());
-        //根据还款id获取回款列表
         List<LendItemReturn> lendItemReturnList = this.selectLendItemReturnList(lendReturnId);
         List<Map<String, Object>> lendItemReturnDetailList = new ArrayList<>();
         for (LendItemReturn lendItemReturn : lendItemReturnList) {
@@ -77,33 +77,25 @@ public class LendItemReturnServiceImpl extends ServiceImpl<LendItemReturnMapper,
             Map<String, Object> map = new HashMap<>();
             //项目编号
             map.put("agentProjectCode", lend.getLendNo());
-            //出借编号
+            //投资编号
             map.put("voteBillNo", lendItem.getLendItemNo());
-            //收款人（出借人）
+            //投资人bindCode
             map.put("toBindCode", bindCode);
-            //还款金额
+            //还款总额
             map.put("transitAmt", lendItemReturn.getTotal());
-            //还款本金
+            //本金
             map.put("baseAmt", lendItemReturn.getPrincipal());
-            //还款利息
+            //利息
             map.put("benifitAmt", lendItemReturn.getInterest());
-            //商户手续费
-            map.put("feeAmt", new BigDecimal("0"));
+            map.put("feeAmt", new BigDecimal(0));
             lendItemReturnDetailList.add(map);
         }
         return lendItemReturnDetailList;
     }
-
-    /**
-     * 根据还款记录id查询对应的回款记录
-     *
-     * @param lendReturnId
-     * @return
-     */
     @Override
     public List<LendItemReturn> selectLendItemReturnList(Long lendReturnId) {
-        QueryWrapper<LendItemReturn> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("lend_return_id", lendReturnId);
-        return baseMapper.selectList(queryWrapper);
+        QueryWrapper<LendItemReturn> lendItemReturnQueryWrapper = new QueryWrapper<>();
+        lendItemReturnQueryWrapper.eq("lend_return_id", lendReturnId);
+        return baseMapper.selectList(lendItemReturnQueryWrapper);
     }
 }

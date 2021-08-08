@@ -21,47 +21,47 @@ import java.util.UUID;
 @Service
 public class UserBindServiceImpl extends ServiceImpl<UserBindMapper, UserBind> implements UserBindService {
 
-	@Resource
-	private UserAccountMapper userAccountMapper;
+    @Resource
+    private UserAccountMapper userAccountMapper;
 
-	@Transactional(rollbackFor = Exception.class)
-	@Override
-	public UserBind bind(Map<String, Object> paramMap) {
-		UserBind userBind = JSON.parseObject(JSON.toJSONString(paramMap), UserBind.class);
-		String bindCode = UUID.randomUUID().toString().replaceAll("-", "");
-		userBind.setBindCode(bindCode);
-		baseMapper.insert(userBind);
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public UserBind bind(Map<String, Object> paramMap) {
+        UserBind userBind = JSON.parseObject(JSON.toJSONString(paramMap), UserBind.class);
+        String bindCode = UUID.randomUUID().toString().replaceAll("-", "");
+        userBind.setBindCode(bindCode);
+        baseMapper.insert(userBind);
 
-		UserAccount userAccount =  new UserAccount();
-		userAccount.setUserCode(bindCode);
-		userAccount.setAmount("0");
-		userAccount.setFreezeAmount("0");
-		userAccountMapper.insert(userAccount);
-		return userBind;
-	}
+        UserAccount userAccount = new UserAccount();
+        userAccount.setUserCode(bindCode);
+        userAccount.setAmount("0");
+        userAccount.setFreezeAmount("0");
+        userAccountMapper.insert(userAccount);
+        return userBind;
+    }
 
-	@Override
-	public boolean isBind(String idCard) {
-		Integer count = baseMapper.selectCount(new QueryWrapper<UserBind>().eq("id_card", idCard));
-		if(count.intValue() > 0) {
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean isBind(String idCard) {
+        Integer count = baseMapper.selectCount(new QueryWrapper<UserBind>().eq("id_card", idCard));
+        if (count.intValue() > 0) {
+            return true;
+        }
+        return false;
+    }
 
-	@Override
-	public UserBind getByBindCode(String bindCode) {
-		return baseMapper.selectOne(new QueryWrapper<UserBind>().eq("bind_code", bindCode));
-	}
+    @Override
+    public UserBind getByBindCode(String bindCode) {
+        return baseMapper.selectOne(new QueryWrapper<UserBind>().eq("bind_code", bindCode));
+    }
 
-	@Override
-	public void checkPassword(String bindCode, String passwd) {
-		if(StringUtils.isEmpty(passwd)) {
-			throw new HfbException(ResultCodeEnum.PAY_PASSWORD_ERROR);
-		}
-		UserBind userBind = this.getByBindCode(bindCode);
-		if(!passwd.equals(userBind.getPayPasswd())) {
-			throw new HfbException(ResultCodeEnum.PAY_PASSWORD_ERROR);
-		}
-	}
+    @Override
+    public void checkPassword(String bindCode, String passwd) {
+        if (StringUtils.isEmpty(passwd)) {
+            throw new HfbException(ResultCodeEnum.PAY_PASSWORD_ERROR);
+        }
+        UserBind userBind = this.getByBindCode(bindCode);
+        if (!passwd.equals(userBind.getPayPasswd())) {
+            throw new HfbException(ResultCodeEnum.PAY_PASSWORD_ERROR);
+        }
+    }
 }
