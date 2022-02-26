@@ -178,7 +178,7 @@ public class LendServiceImpl extends ServiceImpl<LendMapper, Lend> implements Le
             throw new BusinessException(result.getString("resultMsg"));
         }
         //放款成功
-//     （1）标的状态和标的平台收益：更新表弟相关信息
+//     （1）标的状态和标的平台收益：更新标的相关信息
         lend.setRealAmount(realAmount); //平台收益
         lend.setStatus(LendStatusEnum.PAY_RUN.getStatus());
         lend.setPaymentTime(LocalDateTime.now());
