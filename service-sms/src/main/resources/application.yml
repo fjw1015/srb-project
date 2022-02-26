@@ -35,11 +35,11 @@ spring:
 #阿里云短信
 aliyun:
   sms:
-    region-id: cn-hangzhou
-    key-id: LTAI5tNCQhj2BYeGpC2pFFvM
-    key-secret: zz4c30h2lg5R1B2OG1s3MjK56c57qa
-    template-code: SMS_218275021
-    sign-name: 风飘客
+    region-id: 你的regionId
+    key-id: 你的keyId
+    key-secret: 你的keySecret
+    template-code: 你的templateCode
+    sign-name: 你的signName
 
 logging:
   level:
